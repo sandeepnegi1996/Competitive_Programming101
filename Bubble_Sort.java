@@ -9,14 +9,9 @@ class BubbleSort {
                 // fo that in the j loop we are doing arr.length-i-1 
                 
                 if (arr[j]>arr[j+1]) {
+                  
+                    swap(j, j+1, arr);
 
-                    System.out.println("inside swap");
-
-                    //swap arr[j] with arr[j+1]
-
-                    int temp=arr[j];
-                    arr[j]=arr[j+1];
-                    arr[j+1]=temp;
                     
                 }
             }
@@ -24,9 +19,17 @@ class BubbleSort {
         }
     }
 
+    //to make our code more modular we have created a seprate function for the swap
+
+    public static void swap(int i,int j,int arr[]) {
+        int temp=arr[i];
+        arr[i]=arr[j];
+        arr[j]=temp;
+    }
+
     public static void main(String[] args) {
         
-        int arr[]={1,2,3,4,5,6,7,8};
+        int arr[]={9,8,7,6,5,4,3,2,1};
         bubbleSort(arr);
 
         for (int i : arr) {
